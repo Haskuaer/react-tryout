@@ -1,4 +1,4 @@
-##  🍵 <span color="green">JSX</span>   ##
+##  🍵 <span style="color:green">JSX</span>   ##
 
 ## Start
 
