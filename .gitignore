@@ -20,6 +20,3 @@ npm-debug.log*
 .eslintcache
 .vite/
 .cache/
-
-# Others
-note/
