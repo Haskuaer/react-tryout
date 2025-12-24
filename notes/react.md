@@ -1,18 +1,18 @@
 ##  🍵 JSX   ##
 
-## start
+## Start
 
 React needs Node to work
 
-ℹ️ INFO
+ℹ️ **INFO**
 
 - needs building tool { **vite** , next.js, redix}
 
-❗ IMPORTANT
+❗ **IMPORTANT**
 
 - you have to do **npm install** when you switch devices
 
-🛠️ EXAMPLE
+🛠️ **EXAMPLE**
 
 `npm create vite@latest`
 `npm install`
@@ -23,12 +23,12 @@ React has main html file named **index.html**
 It has **root div** which will be injected with components
 To do so React use **createRender** method in **main.jsx**
 
-ℹ️ INFO
+ℹ️ **INFO**
 
 - the id does not have to be **root**
 - the element doesn not have to be **div**
 
-🛠️ EXAMPLE
+🛠️ **EXAMPLE**
 
 **index.html**
 ```html
@@ -48,18 +48,18 @@ createRoot(document.getElementById('root')).render( *COMPONENT* )
 
 Reusable element
 
-ℹ️ INFO
+ℹ️ **INFO**
 
 - used instead of **JS createElement**
 - use expresions **{ }**
 
-❗IMPORTANT
+**❗IMPORTANT**
 
 - always returns **single** element {use fragments **<> </>** to wrap elements}
 - all **data** and **methods** before return
 - **NO** ifs and loops in expressions
 
-🛠️ EXAMPLE
+🛠️ **EXAMPLE**
 
 ```js
 function Component(){
@@ -77,24 +77,26 @@ function Component(){
 
 For holding state
 
-ℹ️ INFO
+ℹ️ **INFO**
 
 - most commonly used
 - accepts all type of data
 
-❗ IMPORTANT
+❗ **IMPORTANT**
 
 - change of state cause **re-render**
 - change value by **setter**
 
-🪲 COMMON ERROR
+🪲 **COMMON ERROR**
 
 - changing state can lead to infinite re-render loop
 
-🛠️ EXAMPLE
+🛠️ **EXAMPLE**
 
 ```js
 const [date, setDate] = useState(0);
+
 ...
+
 <button onClick={() => setDate(1)}></button>
 ```
