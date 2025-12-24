@@ -13,7 +13,9 @@
 
 🍵 JSX:
 
-- Component
+- start ✅
+- render ✅
+- component ✅
 - props
 - expressions
 - attributes
