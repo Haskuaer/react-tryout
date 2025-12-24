@@ -17,7 +17,7 @@ React needs Node to work
 `npm create vite@latest`
 `npm install`
 
-## render
+## Render
 
 React has main html file named **index.html**
 It has **root div** which will be injected with components
@@ -44,7 +44,7 @@ To do so React use **createRender** method in **main.jsx**
 createRoot(document.getElementById('root')).render( *COMPONENT* )
 ```
 
-## component
+## Component
 
 Reusable element
 
