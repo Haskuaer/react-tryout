@@ -1,5 +1,7 @@
 import { useState } from 'react'
 import Component from './Component'
+import Daughter from './Daughter'
+import Son from './Son'
 
 function App() {
 
@@ -13,6 +15,13 @@ function App() {
       <p> Hello, {username} </p>
       <button onClick={() => username === "Daniel" ? setUsername("Adam") : setUsername("Daniel")}>That's not me</button>
       {username === "Adam" && <p>I know you're Adam!</p>}
+      <h3>Props Children</h3>
+      <Son>
+        <p>You're son of a App</p>
+      </Son>
+      <Daughter>
+        <p>You're daughter of a App</p>
+      </Daughter>
     </div>
   )
 }

@@ -19,9 +19,7 @@
 - props ✅
 - attributes ✅
 - conditional ✅
-- class
-- destructing
-- props children
+- props children ✅
 - events
 - conditionals
 - lists

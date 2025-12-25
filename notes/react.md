@@ -192,6 +192,53 @@ function App() {
 }
 ```
 
+## Props Children
+
+You can sent elements to children component
+
+ℹ️ **INFO**
+
+- you can specify where element should be displayed
+
+🛠️ **EXAMPLE**
+
+```js
+function Son(props) {
+
+    return (
+        <div>
+            <h4>Hi I'm son</h4>
+            <div>{props.children}</div>
+        </div>
+    )
+}
+
+function Daughter(props) {
+
+    return (
+        <div>
+            <h4>Hi I'm daughter</h4>
+            <div>{props.children}</div>
+        </div>
+    )
+}
+
+function App() {
+
+  return (
+    <div>
+      <h3>Props Children</h3>
+      <Son>
+        <p>You're son of a App</p>
+      </Son>
+      <Daughter>
+        <p>You're daughter of a App</p>
+      </Daughter>
+    </div>
+  )
+}
+```
+
 # 🪝 HOOKS
 
 ## useState
