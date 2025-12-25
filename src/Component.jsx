@@ -2,9 +2,8 @@ function Component(props) {
 
     const {data} = props;
 
-    return (
-        <p>That's from props: {data}</p>
-    )
+    if(data) return ( <p>That's from props: {data}</p> )
+    else return ( <p>No props 🥺</p>)
 }
 
 export default Component

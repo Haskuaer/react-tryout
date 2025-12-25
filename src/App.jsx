@@ -7,11 +7,12 @@ function App() {
 
   return (
     <div>
-      <h3>useState</h3>
-      <p> Hello, {username} </p>
-      <button onClick={() => setUsername("Daniel... Sorry")}>I'm Daniel</button>
-      <h3>props</h3>
+      <h3>Props</h3>
       <Component data="Hi I'm props value 😊" />
+      <h3>Greetings</h3>
+      <p> Hello, {username} </p>
+      <button onClick={() => username === "Daniel" ? setUsername("Adam") : setUsername("Daniel")}>That's not me</button>
+      {username === "Adam" && <p>I know you're Adam!</p>}
     </div>
   )
 }

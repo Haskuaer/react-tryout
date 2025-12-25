@@ -18,7 +18,7 @@
 - component ✅
 - props ✅
 - attributes ✅
-- ifs
+- conditional ✅
 - class
 - destructing
 - props children

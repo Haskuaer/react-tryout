@@ -125,11 +125,71 @@ Changed so they could work in React
 
 - class becomes **className** *(class = js object)*
 - we use **camelCase** instead of **"-"**
+- we use **camelCase** for **events**
 
 🛠️ **EXAMPLE**
 
-```html
+```js
 <button onClick={() => setUsername("Daniel... Sorry")}>I'm Daniel</button>
+```
+
+## Conditionals
+
+You can conditionally render components
+
+ℹ️ **INFO**
+
+- you can use **tenary, logical** or **if statements**
+
+❗ **IMPORTANT**
+
+- ifs outside return
+- tenary **(x ? a : b)** and logical **&&** wherever
+
+🛠️ **EXAMPLE**
+
+**IF**
+```js
+function Component(props) {
+
+    const {data} = props;
+
+    if(data) return ( <p>That's from props: {data}</p> )
+    else return ( <p>No props 🥺</p>)
+}
+```
+
+**Tenary**
+```js
+function App() {
+
+  const [username, setUsername] = useState("Adam")
+
+  return (
+    <div>
+      <h3>Greetings</h3>
+      <p> Hello, {username} </p>
+      <button onClick={() => username === "Daniel" ? setUsername("Adam") : setUsername("Daniel")}>That's not me</button>
+    </div>
+  )
+}
+```
+
+**Logical**
+```js
+function App() {
+
+  const [username, setUsername] = useState("Adam")
+
+  return (
+    <div>
+      <h3>Greetings</h3>
+      <p> Hello, {username} </p>
+      <button onClick={() => username === "Daniel" ? setUsername("Adam") : setUsername("Daniel")}>That's not me</button>
+      {username === "Adam" && <p>I know you're Adam!</p>}
+    </div>
+  )
+}
 ```
 
 # 🪝 HOOKS
