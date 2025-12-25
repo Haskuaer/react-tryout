@@ -112,6 +112,28 @@ function Component(props) {
 <Component data="Hi I'm props value 😊" />
 ```
 
+## Attributes
+
+Changed so they could work in React
+
+ℹ️ **INFO**
+
+- some HTML attributes names are reserved in js
+- most common uses: **className, onClick, onSubmit**
+
+❗ **IMOPORTANT**
+
+- class becomes **className** *(class = js object)*
+- we use **camelCase** instead of **"-"**
+
+🛠️ **EXAMPLE**
+
+```html
+<button onClick={() => setUsername("Daniel... Sorry")}>I'm Daniel</button>
+```
+
+# 🪝 HOOKS
+
 ## useState
 
 For holding state

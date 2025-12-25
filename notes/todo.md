@@ -16,9 +16,8 @@
 - start ✅
 - render ✅
 - component ✅
-- props
-- expressions
-- attributes
+- props ✅
+- attributes ✅
 - ifs
 - class
 - destructing
