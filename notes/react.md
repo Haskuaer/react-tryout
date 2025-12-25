@@ -200,6 +200,15 @@ You can sent elements to children component
 
 - you can specify where element should be displayed
 
+❗ **IMPORTANT**
+
+- children elements must have **props**
+- be careful what element you **inject** into what
+
+🪲 **COMMON ERROR**
+
+- sometimes you can inject <p> into <h1> or other incompatible element
+
 🛠️ **EXAMPLE**
 
 ```js
