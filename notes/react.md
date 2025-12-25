@@ -73,6 +73,45 @@ function Component(){
 }
 ```
 
+## Props
+
+For passing data to components
+
+ℹ️ **INFO**
+
+- you can put as many props as you want
+- can be **any value**
+- you can name props as you want
+- use **destructing**
+
+❗ **IMPORTANT**
+
+- component recives the argument as a **object**
+- variables, objects & arrays has to be sent as expression **{ }**
+- props are **read only**
+
+🪲 **COMMON ERROR**
+
+- to pass props from A to C, you have to pass to B ass well **(props drilling)**
+- if you want to pass props deeper use **hook** instead 
+
+🛠️ **EXAMPLE**
+
+```js
+function Component(props) {
+
+    const {data} = props;
+
+    return (
+        <p>That's from props: {data}</p>
+    )
+}
+
+...
+
+<Component data="Hi I'm props value 😊" />
+```
+
 ## useState
 
 For holding state

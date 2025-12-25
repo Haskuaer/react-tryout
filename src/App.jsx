@@ -1,6 +1,5 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import Component from './Component'
 
 function App() {
 
@@ -8,8 +7,11 @@ function App() {
 
   return (
     <div>
+      <h3>useState</h3>
       <p> Hello, {username} </p>
       <button onClick={() => setUsername("Daniel... Sorry")}>I'm Daniel</button>
+      <h3>props</h3>
+      <Component data="Hi I'm props value 😊" />
     </div>
   )
 }
