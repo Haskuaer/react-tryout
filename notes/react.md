@@ -92,7 +92,7 @@ For passing data to components
 
 🪲 **COMMON ERROR**
 
-- to pass props from A to C, you have to pass to B ass well **(props drilling)**
+- to pass props from A to C, you have to pass to B aswell **(props drilling)**
 - if you want to pass props deeper use **hook** instead 
 
 🛠️ **EXAMPLE**
