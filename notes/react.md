@@ -210,7 +210,7 @@ You can sent elements to children component
 
 🪲 **COMMON ERROR**
 
-- sometimes you can inject <p> into <h1> or other incompatible element
+- sometimes you can inject `<p>` into `<h1>` or other incompatible element
 
 🛠️ **EXAMPLE**
 
