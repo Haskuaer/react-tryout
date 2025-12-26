@@ -112,20 +112,23 @@ function Component(props) {
 <Component data="Hi I'm props value 😊" />
 ```
 
-## Attributes
+## Attributes & Events
 
 Changed so they could work in React
 
 ℹ️ **INFO**
 
 - some HTML attributes names are reserved in js
+- we use **camelCase** for **events**
+- you can use **arrow function** to pass an argument
+- you can use **object functions**
 - most common uses: **className, onClick, onSubmit**
 
 ❗ **IMOPORTANT**
 
 - class becomes **className** *(class = js object)*
+- events are written inside **{ }**
 - we use **camelCase** instead of **"-"**
-- we use **camelCase** for **events**
 
 🛠️ **EXAMPLE**
 
@@ -245,6 +248,50 @@ function App() {
       </Daughter>
     </div>
   )
+}
+```
+
+## Lists
+
+Render lists with loop
+
+ℹ️ **INFO**
+
+- we use map to go through an array
+- react use **keys** to track of elements
+
+❗ **IMPORTANT**
+
+- each element should has **key** attribute
+- key attribute should be **id**
+- as last resort use **index**, but keep in mind it's working only with non dynamic lists
+
+🛠️ **EXAMPLE**
+
+```
+Array.map((item, index*, array*) => {`
+  *some code*`
+})
+```
+
+```js
+function List() {
+
+    const personel = [
+        {id: 1, name: "Adam"},
+        {id: 2, name: "Daniel"},
+        {id: 3, name: "Paul"},
+        {id: 4, name: "Victoria"}
+    ];
+
+    return(
+        <>
+            <h1>Personel:</h1>
+            <ul>
+                {personel.map((person) => <li key={person.id}>{person.name}</li>)}
+            </ul>
+        </>
+    )
 }
 ```
 

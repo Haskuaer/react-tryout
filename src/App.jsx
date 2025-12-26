@@ -2,6 +2,7 @@ import { useState } from 'react'
 import Component from './Component'
 import Daughter from './Daughter'
 import Son from './Son'
+import List from './List'
 
 function App() {
 
@@ -22,6 +23,7 @@ function App() {
       <Daughter>
         <p>You're daughter of a App</p>
       </Daughter>
+      <List />
     </div>
   )
 }

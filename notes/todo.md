@@ -17,12 +17,10 @@
 - render ✅
 - component ✅
 - props ✅
-- attributes ✅
+- attributes & events ✅
 - conditional ✅
 - props children ✅
-- events
-- conditionals
-- lists
+- lists ✅
 
 📋 FORMS:
 
