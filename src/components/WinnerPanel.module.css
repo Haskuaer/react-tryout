@@ -1,0 +1,29 @@
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: oklch(20% 0 0 / 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.modal {
+    margin: 0;
+    padding: 2rem;
+    min-width: 40vh;
+    text-align:center;
+    background-color: oklch(20% 0 0);
+    border: 1px solid oklch(80% 0 0);
+    border-radius: 15px;
+}
+
+b {
+    color: oklch(75% 0.250 140);
+}
+
+.playAgainBtn {
+    font-weight: bold;
+    font-size: 0.8rem;
+    background-color: oklch(65% 0.130 230);
+}

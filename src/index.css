@@ -12,10 +12,9 @@
 
 button {
     padding: 1rem;
-    
     font-size: 1rem;
     background-color: oklch(25% 0 0);
     color: oklch(80% 0 0);
     border: 1px solid oklch(80% 0 0);
-    border-radius: 5%;
+    border-radius: 10px;
 }

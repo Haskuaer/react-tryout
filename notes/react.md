@@ -295,6 +295,39 @@ function List() {
 }
 ```
 
+## Portals
+
+Render elements outside DOM (beside root)
+
+ℹ️ **INFO**
+
+- for overlays, tooltips, dialogs
+
+❗ **IMPORTANT**
+
+- use state to control when
+
+🛠️ **EXAMPLE**
+
+`import { createPortal } from 'react-dom';`
+`createPortal(children, domNode);`
+
+```js
+function WinnerPanel({winner}) {
+
+    if (!winner) return null;
+
+    return createPortal(
+        <div className={styles.overlay}>
+            <div className={styles.modal}>
+                Winner: {winner}
+            </div>
+        </div>,
+        document.body
+    )
+}
+```
+
 # 🪝 HOOKS
 
 ## useState

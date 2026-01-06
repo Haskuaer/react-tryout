@@ -1,0 +1,17 @@
+ul {
+    margin: 0;
+    padding: 0;
+    gap: 2rem;
+    display: flex;
+    list-style: none;
+}
+
+ul li {
+    margin: 0;
+    padding: 1rem 2rem;
+    border-radius: 25px;
+}
+
+ul li:hover {
+    background-color: oklch(30% 0 0);
+}

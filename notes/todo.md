@@ -21,6 +21,8 @@
 - conditional ✅
 - props children ✅
 - lists ✅
+- portals ✅
+- suspense
 
 📋 FORMS:
 
@@ -31,8 +33,6 @@
 - multiple inputs
 - checkbox
 - radio
-- portals
-- suspense
 
 🎨 CSS:
 
