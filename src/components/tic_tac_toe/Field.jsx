@@ -1,6 +1,6 @@
 import styles from './Board.module.css'
-import cross from '../assets/figures/cross.png'
-import circle from '../assets/figures/circleNew.png'
+import cross from '@assets/figures/cross.png'
+import circle from '@assets/figures/circleNew.png'
 
 function Field(props) {
 

@@ -1,0 +1,7 @@
+.mainMenu {
+    padding: 1rem;
+    width: 100%;
+    text-align: center;
+    background-color: oklch(25% 0 0);
+    border-bottom: 1px solid oklch(80% 0 0);
+}

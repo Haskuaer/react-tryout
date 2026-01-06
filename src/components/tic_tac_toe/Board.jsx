@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import styles from './Board.module.css'
 import Field from './Field'
 import WinnerPanel from './WinnerPanel'
-import DIRECTIONS from '../constants/directions'
+import DIRECTIONS from '@constants/directions'
 
 function Board() {
 
