@@ -82,6 +82,7 @@ function Board() {
 
     return (
         <>
+            <h1>Tic Tac Toe</h1>
             <div className={styles.board}>
                 { board.map((value, index) => <Field key={index} value={value} onClick={() => handleMove(index)}></Field>) }
             </div>

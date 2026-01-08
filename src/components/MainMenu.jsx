@@ -6,10 +6,10 @@ function MainMenu() {
     return (
         <>
             <nav className={styles.mainMenu}>
-                <Link to="/">Home</Link> | {" "}
-                <Link to="/calculator">Calculator</Link> | {" "}
-                <Link to="/stoper">Stoper</Link> | {" "}
-                <Link to="/tic-tac-toe">Tic Tac Toe</Link> | {" "}
+                <Link className={styles.link} to="/">Home</Link>
+                <Link className={styles.link} to="/calculator">Calculator</Link>
+                <Link className={styles.link} to="/stoper">Stoper</Link>
+                <Link className={styles.link} to="/tic-tac-toe">Tic Tac Toe</Link>
             </nav>
         </>
     )

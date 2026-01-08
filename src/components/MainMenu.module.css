@@ -5,3 +5,15 @@
     background-color: oklch(25% 0 0);
     border-bottom: 1px solid oklch(80% 0 0);
 }
+
+.link {
+    padding: 1rem;
+    text-decoration: none;
+    font-weight: bold;
+    color: oklch(80% 0 0);
+}
+
+.link:hover {
+    background-color: oklch(30% 0 0);
+    color: oklch(55% 0.13 250);
+}

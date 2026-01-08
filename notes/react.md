@@ -357,3 +357,68 @@ const [date, setDate] = useState(0);
 
 <button onClick={() => setDate(1)}></button>
 ```
+
+# 🌐 WEB
+
+## Router
+
+ℹ️ **INFO**
+
+- allows to make sub-pages in single page
+
+❗**IMPORTANT**
+
+- put BrowserRouter at the top of hierarchy (main.jsx)
+- put Routes in highest component (App.jsx)
+- use 'Link' instead of <a>
+
+🛠️ **EXAMPLE**
+
+- browser router
+
+```js
+createRoot(document.getElementById('root')).render(
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>,
+)
+```
+
+- routes
+
+```js
+function App() {
+
+  return (
+    <>
+      <div className="app">
+        <MainMenu />
+        <div className="content">          
+          <Routes>
+                  <Route path="/" element={<Home />} />
+                  <Route path="/calculator" element={<Calculator />} />
+                  <Route path="/stoper" element={<Stoper />} />
+                  <Route path="/tic-tac-toe" element={<Board />} />
+          </Routes>
+        </div>
+      </div>
+
+    </>
+  )
+}
+```
+
+- links
+
+```js
+return (
+    <>
+        <nav className={styles.mainMenu}>
+            <Link className={styles.link} to="/">Home</Link>
+            <Link className={styles.link} to="/calculator">Calculator</Link>
+            <Link className={styles.link} to="/stoper">Stoper</Link>
+            <Link className={styles.link} to="/tic-tac-toe">Tic Tac Toe</Link>
+        </nav>
+    </>
+)
+```
