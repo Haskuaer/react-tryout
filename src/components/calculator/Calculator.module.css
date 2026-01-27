@@ -8,13 +8,23 @@
     border-radius: 5px;
 }
 
-.display {
+.displayBase {
     flex: 0 0 auto;
-    padding: 1rem;
+    margin: 0;
     width: 100%;
-    font-size: 3rem;
+    overflow: hidden;
     text-align: right;
-    border: 1px solid oklch(80% 0 0);
+}
+
+.display {
+    padding: 0.5rem 1rem;
+    font-size: 3rem;
+    border-bottom: 1px solid oklch(80% 0 0);
+}
+
+.equationDisplay {
+    padding: 0.25rem 1rem;
+    font-size: 1rem;
 }
 
 .buttons {

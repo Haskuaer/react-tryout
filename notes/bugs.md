@@ -23,3 +23,17 @@ onClick={() => setUsername()}
 ```js
 <div>{props.children}</div>
 ```
+
+## constants export
+❗**PROBLEM**
+- ❌ couldn't export default two constants from the same file
+```js
+export default { BUTTONS, TYPES }
+```
+
+💡**SOLUTION**
+- ✅ separete export
+```js
+export const TYPES = ...
+export const BUTTONS = ...
+```
