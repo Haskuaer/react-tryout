@@ -37,3 +37,13 @@ export default { BUTTONS, TYPES }
 export const TYPES = ...
 export const BUTTONS = ...
 ```
+
+
+# OTHERS
+
+## Terminal Jam
+❗**PROBLEM**
+- new session in vscode has broken terminal (history restored, can't do anything)
+
+💡 **SOLUTION**
+- ❔kill terminal and open new one

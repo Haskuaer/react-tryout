@@ -20,9 +20,16 @@ function Calculator() {
                     setDisplay('0')
                     setMem(null)
                     setOperation(null)
+                    setDot(false)
+                    setMinus(false)
                 }
                 if (value === 'backspace') setDisplay(prev => prev.length > 1 ? prev.slice(0, -1) : '0')
                 if (value === '=') setDisplay(calculate)
+                break;
+
+            case TYPES.NUMBER:
+
+                if (/^\d$/.test(value)) handleNumber(value)
                 break;
             
             case TYPES.OPERATOR:
@@ -38,8 +45,6 @@ function Calculator() {
                 break;
 
             case TYPES.SIGN:
-
-                if (/^\d$/.test(value)) handleNumber(value)
                     
                 if (value === '.') {
                     if (!dot) { 
@@ -64,12 +69,6 @@ function Calculator() {
             default:
                 setDisplay('ERROR');
         }
-
-        // if (type === "ACTION" || type === "OPERATOR" ) setDisplay('0');
-        // else if (display.length < 13) {
-        //     if (value === '.')
-        //     setDisplay(display === '0' ? value : display + value);
-        // }
     }
 
     // useEffect(() => {
@@ -93,7 +92,6 @@ function Calculator() {
 
         let result = null
 
-
         switch(operation) {
             case '+':
                 result = Number(mem) + Number(display)
@@ -107,7 +105,8 @@ function Calculator() {
 
     const handleEquationDisplay = () => {
 
-
+        if (operation.length < 2) return `${mem} ${operation[0] }`
+        if (operation.length == 2) return `${mem} ${operation[0]} ${display} =`
     }
 
     return (
