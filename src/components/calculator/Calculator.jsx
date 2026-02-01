@@ -4,80 +4,70 @@ import { BUTTONS, TYPES } from '@constants/buttons'
 
 function Calculator() {
 
-    const [display, setDisplay] = useState('0');
-    const [dot, setDot] = useState(false);
-    const [minus, setMinus] = useState(false);
-    const [mem, setMem] = useState(null);
-    const [operation, setOperation] = useState(null);
+    const [acc, setAcc] = useState(null)
+    const [display, setDisplay] = useState('0')
+    const [dot, setDot] = useState(false)
+    const [equationDisplay, setEquationDisplay] = useState('')
+    const [operator, setOperator] = useState(null)
+    const [opposite, setOpposite] = useState(false)
+
+    const clearStates = () => {
+        setAcc(null)
+        setDisplay('0')
+        setDot(false)
+        setEquationDisplay('')
+        setOperator(null)
+        setOpposite(false)
+    }
 
     const handlePress = (value, type) => {
 
         switch (type) {
             case TYPES.ACTION:
-
-                if (value === 'clear') setDisplay('0')
-                if (value === 'clearEverything') {
-                    setDisplay('0')
-                    setMem(null)
-                    setOperation(null)
-                    setDot(false)
-                    setMinus(false)
-                }
-                if (value === 'backspace') setDisplay(prev => prev.length > 1 ? prev.slice(0, -1) : '0')
-                if (value === '=') setDisplay(calculate)
-                break;
+                handleAction(value)
+                break
 
             case TYPES.NUMBER:
-
                 if (/^\d$/.test(value)) handleNumber(value)
-                break;
-            
+                break
+
             case TYPES.OPERATOR:
+                handleOperator(value)
+                // setOperator(prev => {
 
-                setOperation(prev => {
+                //     if (prev !== null) return value // Change only operator if its already set
 
-                    if (prev !== null) return value // Change only operator if its already set
-
-                    setOperation(value)
-                    setMem(display)
-                    setDisplay('0');
-                });
-                break;
+                //     setOperator(value)
+                //     setMem(display)
+                //     setDisplay('0');
+                // });
+                break
 
             case TYPES.SIGN:
-                    
-                if (value === '.') {
-                    if (!dot) { 
-                        setDot(true) 
-                        setDisplay(prev => prev + value) 
-                    }
-                }
+                handleSign(value)
+                break
 
-                if (value === 'sign') {
-                    setDisplay(prev => {
-                        if (prev === '0') return prev
-                        if (minus) {
-                            setMinus(false);
-                            return prev.slice(1)
-                        } else {
-                            setMinus(true);
-                            return '-' + prev
-                        }
-                    })
-                }
-                break;
             default:
                 setDisplay('ERROR');
         }
     }
 
-    // useEffect(() => {
-    //     console.log(`Operator set: ${operation}`)
-    // }, [operation])
+    const handleAction = (value) => {
 
-    // useEffect(() => {
-    //     console.log(`Memory set: ${mem}`)
-    // }, [mem])
+        if (value === 'clear') {
+            setDot(false)
+            setOpposite(false)
+            return setDisplay('0')
+        }
+        if (value === 'clearEv') return clearStates()
+        if (value === 'backspace') {
+            // TODO: Handle dot state and opposite state
+            return setDisplay(prev => prev.length > 1 ? prev.slice(0, -1) : '0')
+        }
+        if (value === '=') return setDisplay('In progress')
+    }
+
+
 
     const handleNumber = (digit) => {
 
@@ -88,43 +78,100 @@ function Calculator() {
         })
     }
 
-    const calculate = () => {
+    const handleSign = (value) => {
 
-        let result = null
+        if (value === '.') return handleDot()
+        if (value === 'opposite') return handleOpposite()
+    }
 
-        switch(operation) {
-            case '+':
-                result = Number(mem) + Number(display)
-                break;
-            default:
-                result = 0
+    const handleDot = () => {
+
+        if (dot) return
+        setDot(true)
+        return setDisplay(prev => prev + '.')
+    }
+
+    const handleOpposite = () => {
+
+        if (display === '0' || display === '0.') return
+        if (opposite) {
+            setOpposite(false)
+            return setDisplay(prev => prev.slice(1))
+        } else {
+            setOpposite(true)
+            return setDisplay(prev => '-' + prev)
+        }
+    }
+
+    const handleOperator = (op) => {
+
+        const current = Number(display)
+
+        if (operator !== null) {
+            setEquationDisplay(prev => {
+                prev.slice(0, -2)
+                return `${prev} ${op}`
+            })
+            return setOperator(op)
         }
 
-        return result
+        if (acc === null) {
+            setAcc(current)
+            setEquationDisplay(`${current} ${op}`)
+            setOperator(op)
+            setDisplay('0')
+        } else {
+            const result = calculate(acc, current, operator)
+            setAcc(result)
+            setDisplay(String(result))
+            setEquationDisplay(prev => `${prev} ${current}`)
+        }
+    }
+
+    // Is it neccessery?
+    const handleMemory = () => {
+
+    }
+
+    const handleDisplay = (value, index) => {
+
     }
 
     const handleEquationDisplay = () => {
 
-        if (operation.length < 2) return `${mem} ${operation[0] }`
-        if (operation.length == 2) return `${mem} ${operation[0]} ${display} =`
     }
+
+    const calculate = (a, b, operator) => {
+
+        switch (operator) {
+            case '+': return a + b
+            case '-': return a - b
+            case '×': return a * b
+            case '÷': return b === 0 ? 'Error' : a / b
+            default: return b
+        }
+    }
+
+    useEffect(() => {
+        console.log(acc)
+    }, [acc])
 
     return (
         <div className={styles.calculator}>
             <div className={`${styles.displayBase} ${styles.equationDisplay}`}>
-                {operation ? `${mem} ${operation} ` : ''}
+                {equationDisplay}
             </div>
             <div className={`${styles.displayBase} ${styles.display}`}>
                 {display}
             </div>
             <div className={styles.buttons}>
-                { BUTTONS.map(({label, value, type}) => {
+                {BUTTONS.map(({ label, value, type }) => {
                     return (
-                        <button 
-                            key={label} 
+                        <button
+                            key={label}
                             value={value}
                             type={type}
-                            onClick={ () => handlePress(value, type) }
+                            onClick={() => handlePress(value, type)}
                         >{label}</button>
                     )
                 })}

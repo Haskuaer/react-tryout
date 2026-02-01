@@ -7,7 +7,7 @@ export const TYPES = {
 
 export const BUTTONS = [
     { label: 'C', value: 'clear', type: TYPES.ACTION },
-    { label: 'CE', value: 'clearEverything', type: TYPES.ACTION },
+    { label: 'CE', value: 'clearEv', type: TYPES.ACTION },
     { label: '←', value: 'backspace', type: TYPES.ACTION },
     { label: '÷', value: '÷', type: TYPES.OPERATOR },
     { label: '7', value: '7', type: TYPES.NUMBER },
@@ -24,6 +24,6 @@ export const BUTTONS = [
     { label: '+', value: '+', type: TYPES.OPERATOR },
     { label: '.', value: '.', type: TYPES.SIGN },
     { label: '0', value: '0', type: TYPES.NUMBER },
-    { label: '⁺/₋', value: 'sign', type: TYPES.SIGN },
+    { label: '⁺/₋', value: 'opposite', type: TYPES.SIGN },
     { label: '=', value: '=', type: TYPES.ACTION},
 ]
